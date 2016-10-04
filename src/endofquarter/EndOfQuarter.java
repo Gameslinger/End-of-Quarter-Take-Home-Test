@@ -5,6 +5,8 @@
  */
 package endofquarter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,11 +20,22 @@ public class EndOfQuarter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        List<Double> numbers = new ArrayList();
         
         Scanner input = new Scanner(System.in);
         
-        System.out.println();
+        System.out.println("Please give me an integer:\n");
         
-    }
-    
+        int num = input.nextInt();
+        
+        for(int i = 0; i <= num; i++){
+            System.out.println(i);
+        }
+        num = input.nextInt();
+        
+        if(num > 0){
+           numbers.add(new Double(MathFunctions.SquareRootAndAddThree(num)));
+        }
+        
+        }
 }
