@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Gabe, Bennet, Edison, 
+ * @author Gabe, Clara, Bryson 
  */
 
 public class EndOfQuarter {
