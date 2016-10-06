@@ -48,7 +48,7 @@ public class EndOfQuarter {
         for(Double dbl : numbers){
           sum += dbl;
         }
-        System.out.println("The sum of the list is: "+sum);
+        System.out.println("The sum is: "+sum);
         System.out.println("\n");
         
         //AP requirement
