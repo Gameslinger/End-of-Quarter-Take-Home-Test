@@ -7,7 +7,6 @@ package endofquarter;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Paint;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -52,7 +51,7 @@ public class EndOfQuarter {
         for(Double dbl : numbers){
           sum += dbl;
         }
-        System.out.println("The sum is: "+sum);
+        System.out.println("The sum of the list is: "+sum);
         System.out.println("\n");
         
         //AP requirement
@@ -79,12 +78,12 @@ public class EndOfQuarter {
                 colorName = "red";
                 color = new Color(255,0,0,255);
                 break;
-            case 1:
-                colorName = "blue";
-                color = new Color(0,255,0,255);
-                break;
             case 2:
                 colorName = "green";
+                color = new Color(0,255,0,255);
+                break;
+            case 1:
+                colorName = "blue";
                 color = new Color(0,0,255,255);
                 break;
             default:
@@ -94,11 +93,11 @@ public class EndOfQuarter {
         
         System.out.println("The "+colorName+" has an area of: "+area);
         
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Your circle");
         frame.getContentPane().add(new DrawCircle(color,radiusEntry),BorderLayout.CENTER);
-        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(JFrame.MAXIMIZED_VERT,JFrame.MAXIMIZED_HORIZ);
+        frame.setSize(600,600);
+        
         frame.setVisible(true);
     }
     
