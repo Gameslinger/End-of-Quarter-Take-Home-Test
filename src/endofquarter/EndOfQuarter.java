@@ -7,6 +7,7 @@ package endofquarter;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,13 +28,9 @@ public class EndOfQuarter {
     public static void main(String[] args) {
         //Page One:
         List<Double> numbers = new ArrayList();
-        
         Scanner input = new Scanner(System.in);
-        
         System.out.println("Please give me an integer:");
-        
         int num = input.nextInt();
-        
         for(int i = 1; i <= num; i++){
             System.out.println(i);
         }
@@ -93,11 +90,16 @@ public class EndOfQuarter {
         
         System.out.println("The "+colorName+" has an area of: "+area);
         
+        //Creates JFrame to hold JPanel with title "Your circle":
         JFrame frame = new JFrame("Your circle");
+        //Adds object from drawCircle object:
         frame.getContentPane().add(new DrawCircle(color,radiusEntry),BorderLayout.CENTER);
+        //Sets how program should terminate:
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600,600);
-        
+        //Setting size to full screen: Is this what XMAX and YMAX stand for??
+       Dimension d = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setSize(d.width,d.height);
+        //Shows the frame:
         frame.setVisible(true);
     }
     
