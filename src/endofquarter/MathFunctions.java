@@ -11,7 +11,7 @@ package endofquarter;
  */
 public class MathFunctions {
     public static double SquareRootAndAddThree(double input){
-        return Math.pow(input,1/2)+3;
+        return Math.sqrt(input)+3;
         
         
     }

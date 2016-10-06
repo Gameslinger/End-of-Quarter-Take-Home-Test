@@ -24,18 +24,27 @@ public class EndOfQuarter {
         
         Scanner input = new Scanner(System.in);
         
-        System.out.println("Please give me an integer:\n");
+        System.out.println("Please give me an integer:");
         
         int num = input.nextInt();
         
         for(int i = 0; i <= num; i++){
             System.out.println(i);
         }
+        System.out.println("Give me another number:");
         num = input.nextInt();
         
         if(num > 0){
-           numbers.add(new Double(MathFunctions.SquareRootAndAddThree(num)));
+            Double sqrtNum = MathFunctions.SquareRootAndAddThree(num);
+           if(sqrtNum<=1000){
+           numbers.add(sqrtNum);
+           }
         }
+        double sum = 0;
         
+        for(Double dbl : numbers){
+          sum += dbl;
+        }
+        System.out.println("The sum is: "+sum);
         }
 }
