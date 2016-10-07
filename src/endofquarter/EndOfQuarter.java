@@ -17,11 +17,10 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gabe, Clara, Bryson 
+ * @author Gabe, Clara, Bryson
  */
-
 public class EndOfQuarter {
-    
+
     /**
      * @param args the command line arguments
      */
@@ -31,76 +30,76 @@ public class EndOfQuarter {
         Scanner input = new Scanner(System.in);
         System.out.println("Please give me an integer:");
         int num = input.nextInt();
-        for(int i = 1; i <= num; i++){
+        for (int i = 1; i <= num; i++) {
             System.out.println(i);
         }
         System.out.println("Give me another number:");
         num = input.nextInt();
-        
-        if(num > 0){
+
+        if (num > 0) {
             Double sqrtNum = MathFunctions.SquareRootAndAddThree(num);
-           if(sqrtNum<=1000){
-           numbers.add(sqrtNum);
-           }
+            if (sqrtNum <= 1000) {
+                numbers.add(sqrtNum);
+            }
         }
         double sum = 0;
-        
-        for(Double dbl : numbers){
-          sum += dbl;
+
+        for (Double dbl : numbers) {
+            sum += dbl;
         }
-        System.out.println("The sum is: "+sum);
+        System.out.println("The sum is: " + sum);
         System.out.println("\n");
-        
+
         //AP requirement
         int radiusEntry;
-        
+
         double area;
-        do{
-        radiusEntry = Integer.parseInt(JOptionPane.showInputDialog("Give me an Integer"));
-        area = MathFunctions.AreaOfCircle(radiusEntry);
-        if(area == -1){
-            JOptionPane.showMessageDialog(null, "Input another radius","Error",JOptionPane.ERROR_MESSAGE);
-        }else{
-            break;
-        }
-        
-        }while(true);
-        
+        do {
+            radiusEntry = Integer.parseInt(JOptionPane.showInputDialog("Give me an Integer"));
+            area = MathFunctions.AreaOfCircle(radiusEntry);
+            if (area == -1) {
+                JOptionPane.showMessageDialog(null, "Input another radius", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                break;
+            }
+
+        } while (true);
+
         String colorName;
-        String[] options = {"red","blue","green"};
-        int colorVal = JOptionPane.showOptionDialog(null, "Set color of circle", "Choose a color: ", JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE, null,options,"");
+        String[] options = {"red", "blue", "green"};
+        int colorVal = JOptionPane.showOptionDialog(null, "Set color of circle", "Choose a color: ", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, "");
         Color color;
-        switch(colorVal){
+        switch (colorVal) {
             case 0:
                 colorName = "red";
-                color = new Color(255,0,0,255);
+                color = new Color(255, 0, 0, 255);
                 break;
             case 2:
                 colorName = "green";
-                color = new Color(0,255,0,255);
+                color = new Color(0, 255, 0, 255);
                 break;
             case 1:
                 colorName = "blue";
-                color = new Color(0,0,255,255);
+                color = new Color(0, 0, 255, 255);
                 break;
             default:
                 colorName = "Black";
-                color = new Color(0,0,0,255);
+                color = new Color(0, 0, 0, 255);
         }
-        
-        System.out.println("The "+colorName+" has an area of: "+area);
-        
+
+        System.out.println("The " + colorName + " has an area of: " + area);
+
         //Creates JFrame to hold JPanel with title "Your circle":
         JFrame frame = new JFrame("Your circle");
         //Adds object from drawCircle object:
-        frame.getContentPane().add(new DrawCircle(color,radiusEntry),BorderLayout.CENTER);
+        frame.getContentPane().add(new DrawCircle(color, radiusEntry), BorderLayout.CENTER);
         //Sets how program should terminate:
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Setting size to full screen: Is this what XMAX and YMAX stand for??
-       Dimension d = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        frame.setSize(d.width,d.height);
+        Dimension d = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setSize(d.width, d.height);
         //Shows the frame:
         frame.setVisible(true);
     }
-    
+
 }
