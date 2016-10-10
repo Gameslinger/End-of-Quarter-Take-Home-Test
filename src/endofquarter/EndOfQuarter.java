@@ -40,16 +40,19 @@ public class EndOfQuarter {
             Double sqrtNum = MathFunctions.SquareRootAndAddThree(num);
             if (sqrtNum <= 1000) {
                 numbers.add(sqrtNum);
+            } else {
+                double sum = 0;
+
+                for (Double dbl : numbers) {
+                    sum += dbl;
+                }
+                System.out.println("The sum is: " + sum);
+            System.exit(1);
             }
         }
-        double sum = 0;
 
-        for (Double dbl : numbers) {
-            sum += dbl;
-        }
-        System.out.println("The sum is: " + sum);
-        System.out.println("\n");
 
+                System.out.println("\n");
         //AP requirement
         int radiusEntry;
 
