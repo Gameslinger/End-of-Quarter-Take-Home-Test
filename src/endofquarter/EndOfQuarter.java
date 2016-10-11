@@ -12,12 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import javax.swing.JFrame;
-
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gabe, Clara, Bryson
+ * @author Gabe Maxfield, Clara Durling, Bryson Beam
  */
 public class EndOfQuarter {
 
@@ -33,6 +32,8 @@ public class EndOfQuarter {
         for (int i = 1; i <= num; i++) {
             System.out.println(i);
         }
+        
+        
         System.out.println("Give me another number:");
         num = input.nextInt();
 
@@ -40,9 +41,9 @@ public class EndOfQuarter {
             Double sqrtNum = MathFunctions.SquareRootAndAddThree(num);
             if (sqrtNum <= 1000) {
                 numbers.add(sqrtNum);
-            } else {
+            } 
+            else {
                 double sum = 0;
-
                 for (Double dbl : numbers) {
                     sum += dbl;
                 }
@@ -52,17 +53,18 @@ public class EndOfQuarter {
         }
 
 
-                System.out.println("\n");
-        //AP requirement
+        System.out.println("\n");
+        //AP requirements
         int radiusEntry;
-
         double area;
+        
         do {
-            radiusEntry = Integer.parseInt(JOptionPane.showInputDialog("Give me an Integer"));
+            radiusEntry = Integer.parseInt(JOptionPane.showInputDialog("Give me the radius."));
             area = MathFunctions.AreaOfCircle(radiusEntry);
             if (area == -1) {
                 JOptionPane.showMessageDialog(null, "Input another radius", "Error", JOptionPane.ERROR_MESSAGE);
-            } else {
+            }
+            else {
                 break;
             }
 
@@ -74,6 +76,7 @@ public class EndOfQuarter {
         Color color;
         switch (colorVal) {
             case 0:
+                //Color(Red value, Green Value, Blue Value, Opacity);
                 colorName = "red";
                 color = new Color(255, 0, 0, 255);
                 break;
@@ -90,7 +93,7 @@ public class EndOfQuarter {
                 color = new Color(0, 0, 0, 255);
         }
 
-        System.out.println("The " + colorName + " has an area of: " + area);
+        System.out.println("The " + colorName + " circle has an area of: " + area);
 
         //Creates JFrame to hold JPanel with title "Your circle":
         JFrame frame = new JFrame("Your circle");
@@ -103,6 +106,7 @@ public class EndOfQuarter {
         frame.setSize(d.width, d.height);
         //Shows the frame:
         frame.setVisible(true);
+        
     }
 
 }

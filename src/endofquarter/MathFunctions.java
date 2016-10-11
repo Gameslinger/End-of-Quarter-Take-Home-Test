@@ -7,7 +7,7 @@ package endofquarter;
 
 /**
  *
- * @author student
+ * @author Gabe Maxfield, Clara Durling, Bryson Beam
  */
 public class MathFunctions {
     public static double SquareRootAndAddThree(double input){

@@ -11,14 +11,14 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author student
+ * @author Gabe Maxfield, Clara Durling, Bryson Beam
  */
 public class DrawCircle extends JPanel {
     //Stores color of circle
     Color clr;
     //how long/wide to draw circle:
-     int diameter;
-     //Assigns values to arguments:
+    int diameter;
+    //Assigns values to arguments:
     DrawCircle(Color clr, int side){
         this.clr = clr;
         this.diameter = side * 2;
@@ -26,8 +26,8 @@ public class DrawCircle extends JPanel {
     //Overrides paintComponent from JPanel:
     @Override
     public void paintComponent(Graphics g){
-         super.paintComponent(g);
-         //Set color to paint with:
+        super.paintComponent(g);
+        //Set color to paint with:
         g.setColor(clr);
         //Draws the circle 
         g.fillOval(0, 0, diameter, diameter);
